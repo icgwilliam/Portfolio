@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+
+  <title>Mapping Minning Areas</title>  
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+</head>
+
+<body class="">
+
+<!-- Add your content of header -->
+<div class="background-color-layer" style="background-image: url('assets/images/Foto_HV.jpg')"></div>
+<main class="content-wrapper">
+  <header class="white-text-container section-container">
+    <div class="text-center">
+      <h1>Mapping Minning Areas using Machine Learning</h1>
+    </div>
+  </header>
+
+  <!-- Project Details Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <!-- Project Introduction -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Project Overview</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <p><img src="./assets/images/Minning.jpeg" class="img-responsive" alt="Reforestation Areas"></p>
+              </div>
+              <div class="col-md-8">
+                <p>The initial step in identifying the utilized mining area involves applying a machine learning algorithm, specifically the Random Forest model, trained with samples collected by the experts from the Geospatial Observation Team (EOG). Random Forest, a supervised classification model, is capable of processing large volumes of geospatial data and detecting complex patterns in imagery. Due to its ability to handle non-linear features and high-dimensional data, it is highly effective in identifying potential areas where mining activities take place with remarkable accuracy.
+
+                 <p> For this process, the Google Earth Engine platform is used, providing access to a vast array of satellite data and advanced geospatial processing tools. These capabilities allow us to complement the classification with additional information from various sources, such as radar data and digital terrain models, thereby enhancing the analysis and improving the accuracy of the results.</p>
+                  
+                 <p> The samples used to train the algorithm are selected from areas known for mining activity, enabling the model to learn the specific characteristics that distinguish these areas from others. Once trained, the algorithm can efficiently classify new areas, accurately identifying those likely associated with mining activities.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Methodology Section -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Methodology</h2>
+            <p>We employed satellite imagery (Planet) and geospatial data analysis techniques to identify utilized mining area. The key steps in the project include:</p>
+            <ul>
+              <li><strong>Selection and downloading of satellite images:</strong> Satellite images from Planet data are selected and downloaded for the analysis of mining areas.</li>
+              <li><strong>Integration of additional data to improve accuracy:</strong> Additional data, such as digital terrain models and radar, are integrated to enhance the classification and improve its accuracy.</li>
+              <li><strong>Application of the Random Forest classification algorithm:</strong> The Random Forest classification model is used to train with samples extracted from mining areas, enabling precise identification of mining zones.</li>
+              <li><strong>Validation of supervised classification:</strong> An expert reviews the classified areas, correcting errors and adjusting the classification to ensure accuracy.</li>
+              <li><strong>Use of high-resolution images for further verification:</strong> High-resolution images from SecureWatch are used for detailed verification and adjustment of identified mining areas.</li>
+              <li><strong>Generation of results and final reports:</strong> A detailed report is generated with identified mining areas, including accuracy analysis and classification metrics.</li>
+              <li><strong>Continuous update and monitoring:</strong> A monthly workflow is established to update the Used Mining Area using Planet data and new satellite images.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Results and Impact Section -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Results & Impact</h2>
+            <p>As a result of this project, several deforested regions have been identified and mapped for reforestation. The key outcomes include:</p>
+            <ul>
+              <li><strong>Continuous Monitoring and Updates:</strong> The system is capable of updating the "Used Mining Area" on a monthly basis, ensuring that the data remains current and reflective of any new mining activity or changes. This dynamic approach allows for real-time monitoring and faster decision-making.</li>
+              <li><strong>Improved Decision-Making:</strong> With a robust and accurate dataset of mining areas, stakeholders—including environmental authorities, mining regulators, and land management agencies—can make informed decisions regarding land use, environmental protection, and resource allocation.</li>
+              <li><strong>Increased Efficiency in Monitoring:</strong> By automating the classification process and integrating additional data sources, the system reduces manual work, streamlining monitoring tasks and improving the efficiency of tracking mining activities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Related Images Section -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Project Gallery</h2>
+            <p>The following map displays the Utilized Mining Area, mapped using machine learning algorithms and Planet imagery.</p>
+            <div id="map" style="width: 100%; height: 600px;">
+              
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- Contact Form -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Contact</h2>
+            <form action="" class="reveal-content">
+              <div class="form-group">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="subject" placeholder="Subject">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" rows="5" placeholder="Enter your message"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" class=" btn btn-primary">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer-container white-text-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
+        <p>© All rights reserved. William Peña | Reforestation Areas Project</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+</script>
+
+<script type="text/javascript" src="./main.bc58148c.js"></script>
+
+<script>
+  // Inicializa el mapa y le da un centro y un zoom inicial
+  var map = L.map('map', {
+      center: [11.081811, -72.614751],  // Coordenadas aproximadas de La Jagua de Ibirico
+      zoom: 12
+  });
+
+  
+
+  var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+  }).addTo(map);
+
+  var OSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+
+  // WMTS para el mosaico de Planet (se debe tener una API Key de Planet)
+  var wmtsLayer = L.tileLayer('https://api.planet.com/basemaps/v1/mosaics/wmts?api_key=8018a7d6a96a4dba97e4e53ff178e649', {
+    layers: 'Planet Medres Normalized Analytic 2019-06 2019-11 Mosaic', // Nombre del mosaico
+    format: 'image/png',
+    attribution: '© Planet Labs'
+  }).addTo(map);
+  
+  // Agregar un shapefile del área minera, asumiendo que está en formato GeoJSON
+  var areaMineraLayer = L.geoJSON(null, {
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup('<b>Área Minera Utilizada</b>');
+    }
+  }).addTo(map);
+
+  // Cargar el shapefile (asegúrate de tenerlo como archivo GeoJSON)
+  // Nota: Cambia la URL de tu shapefile GeoJSON
+  fetch('./assets/json/AMU.json')  // Cambia esta URL al enlace donde está almacenado tu archivo GeoJSON "C:\Users\WilliamPena\Downloads\PortafolioWP\energy\assets\json\AMU.json"
+  .then(function(response) { return response.json(); })
+  .then(function(data) {
+    areaMineraLayer.addData(data);
+  });
+
+  var baseMaps = {
+    "Mosaico Planet": wmtsLayer,
+    "OSM": OSM,
+    "ESRI": Esri_WorldImagery
+
+  };
+  
+  var overlayMaps = {
+    "Área Minera Utilizada": areaMineraLayer
+  };
+  
+  // Agregar un control de capas
+  L.control.layers(baseMaps).addTo(map);
+
+</script>
+
+</body>
+
+</html>
